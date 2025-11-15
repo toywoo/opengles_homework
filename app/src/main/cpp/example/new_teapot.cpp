@@ -17,8 +17,11 @@ void NewTeapot::start() {
 
 void NewTeapot::update(const float deltaTime) {
     // clear screen
-    camera.setEye(glm::rotate(deltaTime * glm::radians(30.0f), camera.getUp())
-                  * glm::vec4(camera.getEye(), 1.0));
+//    camera.setEye(glm::rotate(deltaTime * glm::radians(30.0f), camera.getUp())
+                //  * glm::vec4(camera.getEye(), 1.0));
+
+    // move light to move shadow
+    light.setPosition(glm::rotate(deltaTime * glm::radians(20.0f), glm::vec3(0.0f, 1.0f, 0.0f)) * glm::vec4(light.getPosition(), 1.0f));
 
     // first pass - create shadow map
     {
