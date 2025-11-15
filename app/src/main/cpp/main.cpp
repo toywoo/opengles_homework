@@ -36,7 +36,7 @@ void surfaceCreated(const AAssetManager* aAssetManager, const int id) {
             scene = new PN_Triangles();
             break;
         case 9:
-            scene = new DispMapping();
+            scene = new NewTeapot();
             break;
         default:
             // impossible case
